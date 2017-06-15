@@ -1,0 +1,21 @@
+<div class="row">
+    <form role="form" novalidate class="col s4" [formGroup]="loginForm" (ngSubmit)="save()">
+        <div class="row">            
+            <div class="input-field col s12">
+                <input id="user-name" type="text" class="validate" formControlName="userName">
+                <label for="user-name">User Name *</label>
+                <em *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || submitted)">User name is required.</em>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" formControlName="password">
+                <label for="password">Password *</label>
+                <em *ngIf="loginForm.controls.password?.invalid  && (loginForm.controls.password?.touched || submitted)">Password is required.</em>
+            </div>
+        </div>
+        <div class='row'>
+            <input type="submit" name="save" class="col s12 btn btn-large" value="Login"/>
+        </div>        
+    </form>
+</div>

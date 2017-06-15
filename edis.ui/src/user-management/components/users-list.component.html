@@ -1,0 +1,18 @@
+<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons" [routerLink]="['/users/details','new']">+</i></a>
+
+<div class="row">
+    <div class="col s3" *ngFor="let user of users">
+        <div class="card grey">
+            <div class="card-content white-text" [routerLink]="['/users/details',user._id]">
+                <span class="card-title">{{user.firstName}} {{user.lastName}}</span>
+                <p>{{user.userName}}</p>
+                <p>{{user.email}}</p>
+                <p>{{user.phone}}</p>
+            </div>
+            <div class="card-action">
+                <a [routerLink]="['/users/details',user._id]">Edit</a>
+                <a (click)="remove(user._id)">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row">
+    <form role="form" novalidate class="col s4" [formGroup]="userForm" (ngSubmit)="save()">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" formControlName="firstName">
+                <label for="first_name">First Name</label>
+                <em *ngIf="userForm.controls.firstName?.invalid && (userForm.controls.firstName?.touched || submitted)">First name is required.</em>                
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" formControlName="lastName">
+                <label for="last_name">Last Name</label>
+                <em *ngIf="userForm.controls.lastName?.invalid && (userForm.controls.lastName?.touched || submitted)">Last name is required.</em>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="user_name" type="text" class="validate" formControlName="userName">
+                <label for="user_name">User Name *</label>
+                <em *ngIf="userForm.controls.userName?.invalid && (userForm.controls.userName?.touched || submitted)">User name is required.</em>
+            </div>
+            <div class="input-field col s6">
+                <input id="password" type="password" class="validate" formControlName="password">
+                <label for="password">Password *</label>
+                <em *ngIf="userForm.controls.password?.invalid  && (userForm.controls.password?.touched || submitted)">Password is required.</em>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="email" type="text" class="validate" formControlName="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="phone" type="text" class="validate" formControlName="phone">
+                <label for="phone">Phone</label>
+            </div>
+        </div>
+        <div class='row'>
+            <input type="submit" name="save" class="col s6 btn btn-large" value="Save" />
+            <input type="button" name="cacel" class="col s6 btn btn-large" (click)="cancel()" value="Cancel" />
+        </div>
+    </form>
+</div>
