@@ -17,7 +17,7 @@ export class AuthenticationService {
         return this.http.post('account/authenticate', user)
             .map((response: Response) => {
                 this.onAuthenticated.emit(true);
-                return <Observable<ResponseModel<AuthenticationModel>>>response.json();
+                return <ResponseModel<AuthenticationModel>>response.json();
             });
     }
 
